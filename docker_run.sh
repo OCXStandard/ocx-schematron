@@ -1,6 +1,1 @@
-#!/bin/zsh
-
-docker run -d --name schematron -p 8080:8080 \
-             -v ${PWD}/resources:/validator/resources/ \
-             -e validator.resourceRoot=/validator/resources/  \
-             isaitb/xml-validator
+docker run -d --name schematron -p 8080:8080 -v ${PWD}/resources:/validator/resources/ -v ${PWD}/tests/data:/validator/data -e validator.resourceRoot=/validator/resources/  ocx-validator
